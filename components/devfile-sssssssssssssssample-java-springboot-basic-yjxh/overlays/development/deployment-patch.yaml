@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+  namespace: rsoaresd-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:7ca8a32f9365030ac0ae5bbd85afd15cd773547944a04c75ad8b2221957739a6
+        name: my-java-springboot
+        resources: {}
+status: {}
