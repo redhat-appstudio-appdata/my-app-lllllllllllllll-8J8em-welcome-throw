@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+    app.kubernetes.io/part-of: my-app-lllllllllllllll
+  name: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+  namespace: rsoaresd-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-springboot-app
+      app.kubernetes.io/instance: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: java-springboot-app
+        app.kubernetes.io/instance: devfile-sssssssssssssssample-java-springboot-basic-yjxh
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:8J8em-devfile-sssssssssssssssample-java-springboot-basic-yjxh
+        name: my-java-springboot
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 300Mi
+          requests:
+            cpu: 10m
+            memory: 180Mi
+status: {}
